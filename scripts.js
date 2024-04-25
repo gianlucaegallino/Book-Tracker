@@ -31,7 +31,7 @@ function showAllBooks() {
     let genre = book.genre;
     //Creates inner html with the book info.
     div.innerHTML = `
-    <h2>${title}</h2>
+    <h2 class="bookTitle">${title}</h2>
     <p>Author: ${author}</p>
     <p>Pages: ${pages}</p>
     <p>Read?: ${read}</p>

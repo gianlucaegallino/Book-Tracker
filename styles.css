@@ -7,8 +7,9 @@
 }
 .book {
     padding: 1rem;
-    background-color: aquamarine;
+    background-color: #f3f3f3;
     border-radius: 10px;
+    border: 1px solid #b1b1b1;
     margin: 1rem;
     display: flex;
     flex-direction: column;
@@ -16,4 +17,7 @@
     align-content: center;
     width: 250px;
     height: 250px;
+}
+.bookTitle{
+    align-self: center;
 }
