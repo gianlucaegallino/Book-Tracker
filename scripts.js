@@ -23,10 +23,20 @@ function showAllBooks() {
     const div = document.createElement("div");
     bookContainer.appendChild(div);
     div.classList.add("book");
-    const p = document.createElement("p");
-    div.appendChild(p);
-    p.classList.add("booktext");
-    p.innerText = "hi!";
+    //Gets values of each book
+    let title = book.title;
+    let author = book.author;
+    let pages = book.pageCount;
+    let read = book.hasBeenRead;
+    let genre = book.genre;
+    //Creates inner html with the book info.
+    div.innerHTML = `
+    <h2>${title}</h2>
+    <p>Author: ${author}</p>
+    <p>Pages: ${pages}</p>
+    <p>Read?: ${read}</p>
+    <p>Genre: ${genre}</p>
+    `;
   });
 }
 
