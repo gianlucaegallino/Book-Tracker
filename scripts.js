@@ -11,24 +11,23 @@ function Book(author, title, pageCount, hasBeenRead, genre) {
   this.genre = genre;
 }
 
-function addBookToLibrary() {
+function addBookToLibrary(author, title, pageCount, hasBeenRead, genre) {
   let book = new Book(author, title, pageCount, hasBeenRead, genre);
   myLibrary.push(book);
 }
 
-function showAllBooks(){
-    let bookContainer = document.querySelector(".BooksContainer");
-    forEach (book in myLibrary)
-    {
-        //Creates a book card
-        const div = document.createElement("div");
-        bookContainer.appendChild(div);
-        div.classList.add("book");
-        const p = document.createElement("p");
-        div.appendChild(p);
-        p.classList.add("booktext");
-        p.innerText("hi!");
-    }
+function showAllBooks() {
+  let bookContainer = document.querySelector(".BooksContainer");
+  myLibrary.forEach((book) => {
+    //Creates a book card
+    const div = document.createElement("div");
+    bookContainer.appendChild(div);
+    div.classList.add("book");
+    const p = document.createElement("p");
+    div.appendChild(p);
+    p.classList.add("booktext");
+    p.innerText = "hi!";
+  });
 }
 
 showAllBooks();
