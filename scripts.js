@@ -40,4 +40,13 @@ function showAllBooks() {
   });
 }
 
+function popmodal(){
+  console.log("a");
+  let modal = document.querySelector(".modalDialog");
+  modal.showModal();
+}
+
+let addBtn = document.querySelector(".addButton");
+addBtn.addEventListener("click", popmodal);
+
 showAllBooks();

@@ -19,7 +19,22 @@
         <div class="BooksContainer">
 
         </div>
-        <button type="button">Add new book</button>
+        <button class = "addButton"type="button">Add new book</button>
+        <dialog class="modalDialog">
+            <form method="dialog">
+                <input placeholder="Author" type="text">
+                <input placeholder="Title" type="text">
+                <input placeholder="Page Count" type="number">
+                <input placeholder="Genre" type="text">
+                <div>
+                    <input type="checkbox" name="readStatus" id="readStatus">
+                    <label for="readStatus">Have you read this book?</label>
+                </div>
+                <div>
+                    <button type="submit" class="submitBtn">Add book</button>
+                </div>
+            </form>
+        </dialog>
     </main>
     <footer>
         <p id="followReminder">Follow me!</p>
