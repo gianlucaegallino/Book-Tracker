@@ -16,7 +16,8 @@ body {
     place-items: center;
     width: 80vw;
     padding: 2rem;
-    border-radius: 2rem
+    border-radius: 2rem;
+    gap: 2rem;
 }
 .book {
     color: #141414;

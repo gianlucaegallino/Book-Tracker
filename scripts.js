@@ -1,7 +1,14 @@
-const myLibrary = [
-  { author: "a", title: "a", pageCount: "a", hasBeenRead: "a", genre: "a" },
-  { author: "b", title: "b", pageCount: "b", hasBeenRead: "b", genre: "b" },
-];
+let modal = document.querySelector(".modalDialog");
+let addBtn = document.querySelector(".addButton");
+let subBtn = document.querySelector(".submitBtn");
+let authorInput = document.querySelector(".author");
+let titleInput = document.querySelector(".bookTitle");
+let pageInput = document.querySelector(".pageCount");
+let genreInput = document.querySelector(".genre");
+let readInput = document.querySelector(".readStatus");
+let myForm = document.querySelector(".myForm");
+
+const myLibrary = [];
 
 function Book(author, title, pageCount, hasBeenRead, genre) {
   this.author = author;
@@ -18,6 +25,12 @@ function addBookToLibrary(author, title, pageCount, hasBeenRead, genre) {
 
 function showAllBooks() {
   let bookContainer = document.querySelector(".BooksContainer");
+  //removes old books, if present
+  let booklist = document.querySelectorAll(".book");
+  booklist.forEach((book) => {
+    book.remove();
+  });
+  //Adds the books in the list
   myLibrary.forEach((book) => {
     //Creates a book card
     const div = document.createElement("div");
@@ -40,13 +53,41 @@ function showAllBooks() {
   });
 }
 
-function popmodal(){
-  console.log("a");
-  let modal = document.querySelector(".modalDialog");
+function popmodal() {
   modal.showModal();
 }
 
-let addBtn = document.querySelector(".addButton");
+function formSubmit(event) {
+  let success = false;
+  event.preventDefault();
+
+  //gets values from the form
+  let author = authorInput.value;
+  let title = titleInput.value;
+  let pages = pageInput.value;
+  let read = readInput.checked;
+  let genre = genreInput.value;
+
+  //checks for empty fields
+  if (author != "" && title != "" && pages != "" && genre != "") success = true;
+
+  if (success) {
+    addBookToLibrary(author, title, pages, read, genre);
+    showAllBooks();
+  } else {
+    alert("One or more values are empty or invalid.");
+  }
+  // //Resets fields for next input
+  myForm.reset();
+
+  //Closes the modal
+  modal.close();
+}
+
+//modal showing
 addBtn.addEventListener("click", popmodal);
+
+//form submission canceling
+subBtn.addEventListener("click", formSubmit);
 
 showAllBooks();
