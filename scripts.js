@@ -45,10 +45,12 @@ function showAllBooks() {
     <h2 class="bookTitle">${title}</h2>
     <p>Author: ${author}</p>
     <p>Pages: ${pages}</p>
-    <p>Read?: ${read}</p>
+    <p>Has been read: ${read}</p>
     <p>Genre: ${genre}</p>
-    <button class="removeBtn" data-booknumber="${bookCount}">Delete book</button>
-    <button class="toggleRead" data-booknumber="${bookCount}">Toggle Read</button>
+    <div class="btnContainer">
+      <button class="toggleRead" data-booknumber="${bookCount}">Toggle Read</button>
+      <button class="removeBtn" data-booknumber="${bookCount}">Delete book</button>
+    </div>
     `;
     bookCount++;
   });

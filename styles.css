@@ -3,6 +3,18 @@
   src: url(./fonts/PTSerif-Regular.ttf);
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #3a3a3a;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #161616
+  }
+
 body {
   font-family: PTSerif, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -42,7 +54,6 @@ p {
   justify-content: center;
   align-content: center;
   width: 250px;
-  height: 250px;
 }
 .bookTitle {
   align-self: center;
@@ -61,6 +72,11 @@ p {
   width: 2rem;
   height: 2rem;
 }
+ .containerHeading{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ }
 
 header,
 footer {
@@ -71,4 +87,41 @@ footer {
   align-items: center;
   gap: 20px;
 }
-/* //MAKE THE MODAL FLOAT */
+
+button {
+    background-color: black;
+    border: 4px solid black;
+    color: #fafafa;
+    border-radius: 15px;
+    padding: 0.5rem;
+    margin: 0px;
+    transition: all 0.3s;
+}
+
+button:hover{
+    scale: 0.95;
+    transition: all 0.3s;
+}
+
+.removeBtn{ 
+    background-color: #ffffff00;
+    color: black;
+    font-weight: 500;
+    border: 4px solid black;
+}
+.toggleRead{
+    font-weight: 500;
+}
+.btnContainer{
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+h2{
+    margin: 0px;
+}
+
