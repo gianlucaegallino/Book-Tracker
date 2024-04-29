@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Tracker!</title>
+    <link rel="shortcut icon" href="./svg/book.svg" type="image/x-icon">
     <!-- Normalize.css -->
     <link rel="stylesheet" href="normalize.css">
     <!-- Local Stylesheet -->
@@ -12,14 +13,16 @@
 </head>
 
 <body>
-    <header><h1>Book Tracker</h1></header>
-    
+    <header>
+        <h1 class="title"><img class="titleImg" src="./svg/book.svg" alt="book logo">Book Tracker</h1>
+    </header>
+
     <main>
-        <p>books:</p>
+        <h2>Your Books:</h2>
         <div class="BooksContainer">
 
         </div>
-        <button class = "addButton" type="button">Add new book</button>
+        <button class="addButton" type="button">Add new book</button>
         <dialog class="modalDialog">
             <form method="dialog" class="myForm">
                 <input required placeholder="Author" type="text" class="author">
@@ -37,7 +40,7 @@
         </dialog>
     </main>
     <footer>
-        <p id="followReminder">Follow me!</p>
+        <p class="followReminder">Follow me!</p>
         <div class="github">
             <iframe src="https://ghbtns.com/github-btn.html?user=gianlucagallino&type=follow&count=false&size=large"
                 frameborder="0" scrolling="0" width="232" height="30" title="GitHub"></iframe>

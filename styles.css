@@ -1,44 +1,74 @@
-body {
-    background-color: #3a3a3a;
-    color: white;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-.BooksContainer{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-template-rows: 1fr;
-    grid-auto-rows: 1fr;
-    place-items: center;
-    width: 80vw;
-    padding: 2rem;
-    border-radius: 2rem;
-    gap: 2rem;
-}
-.book {
-    color: #141414;
-    padding: 1rem;
-    background-color: #e6e6e6;
-    border: 3px solid #d3d3d3;
-    border-radius: 2rem;
-    box-shadow: 3px 3px 2rem #141414;
-    margin: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    width: 250px;
-    height: 250px;
-}
-.bookTitle{
-    align-self: center;
+@font-face {
+  font-family: PTSerif;
+  src: url(./fonts/PTSerif-Regular.ttf);
 }
 
-header, footer{
-    height: 10vh;
+body {
+  font-family: PTSerif, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: #3a3a3a;
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+p {
+    font-family: PTSerif;
+}
+.BooksContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: 1fr;
+  grid-auto-rows: 1fr;
+  place-items: center;
+  width: 80vw;
+  padding: 2rem;
+  border-radius: 2rem;
+  gap: 2rem;
+}
+.book {
+  color: #141414;
+  padding: 1rem;
+  background-color: #e6e6e6;
+  border: 3px solid #d3d3d3;
+  border-radius: 2rem;
+  box-shadow: 3px 3px 2rem #141414;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 250px;
+  height: 250px;
+}
+.bookTitle {
+  align-self: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.titleImg {
+  width: 2rem;
+  height: 2rem;
+}
+
+header,
+footer {
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 /* //MAKE THE MODAL FLOAT */

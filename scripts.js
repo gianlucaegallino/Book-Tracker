@@ -26,10 +26,7 @@ function addBookToLibrary(author, title, pageCount, hasBeenRead, genre) {
 function showAllBooks() {
   let bookContainer = document.querySelector(".BooksContainer");
   //removes old books, if present
-  let booklist = document.querySelectorAll(".book");
-  booklist.forEach((book) => {
-    book.remove();
-  });
+  bookContainer.innerHTML="";
   let bookCount = 0;
   //Adds the books in the list
   myLibrary.forEach((book) => {
@@ -71,6 +68,10 @@ function showAllBooks() {
       toggleReadBook(num);
     });
   });
+  //If there arent any books, add placeholder text.
+  if (bookContainer.innerHTML == ""){
+    bookContainer.innerHTML = "<p>It seems like there aren't any books here yet. Add one to get started.</p>";
+  }
 }
 
 function popmodal() {
@@ -110,9 +111,7 @@ function removeBook(bookid) {
 }
 
 function toggleReadBook(bookid) {
-  console.log(myLibrary[bookid].hasBeenRead);
   myLibrary[bookid].hasBeenRead = !myLibrary[bookid].hasBeenRead;
-  console.log(myLibrary[bookid].hasBeenRead);
   showAllBooks();
 }
 
@@ -121,5 +120,6 @@ addBtn.addEventListener("click", popmodal);
 
 //form submission canceling
 subBtn.addEventListener("click", formSubmit);
+
 
 showAllBooks();
