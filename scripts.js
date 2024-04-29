@@ -30,6 +30,7 @@ function showAllBooks() {
   booklist.forEach((book) => {
     book.remove();
   });
+  let bookCount = 0;
   //Adds the books in the list
   myLibrary.forEach((book) => {
     //Creates a book card
@@ -49,7 +50,17 @@ function showAllBooks() {
     <p>Pages: ${pages}</p>
     <p>Read?: ${read}</p>
     <p>Genre: ${genre}</p>
+    <button class="removeBtn" data-booknumber="${bookCount}">Delete book</button>
     `;
+    bookCount++;
+  });
+  //Adds removal listeners to books
+  let remBtns = document.querySelectorAll(".removeBtn");
+  remBtns.forEach((butt) => {
+    butt.addEventListener("click", function () {
+      let num = butt.dataset.booknumber;
+      removeBook(num);
+    });
   });
 }
 
@@ -82,6 +93,11 @@ function formSubmit(event) {
 
   //Closes the modal
   modal.close();
+}
+
+function removeBook(bookid) {
+  myLibrary.splice(bookid,1);
+  showAllBooks();
 }
 
 //modal showing
