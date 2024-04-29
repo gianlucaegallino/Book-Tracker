@@ -51,6 +51,7 @@ function showAllBooks() {
     <p>Read?: ${read}</p>
     <p>Genre: ${genre}</p>
     <button class="removeBtn" data-booknumber="${bookCount}">Delete book</button>
+    <button class="toggleRead" data-booknumber="${bookCount}">Toggle Read</button>
     `;
     bookCount++;
   });
@@ -60,6 +61,14 @@ function showAllBooks() {
     butt.addEventListener("click", function () {
       let num = butt.dataset.booknumber;
       removeBook(num);
+    });
+  });
+  //Adds read toggle listeners to books
+  let togBtns = document.querySelectorAll(".toggleRead");
+  togBtns.forEach((butt) => {
+    butt.addEventListener("click", function () {
+      let num = butt.dataset.booknumber;
+      toggleReadBook(num);
     });
   });
 }
@@ -96,7 +105,14 @@ function formSubmit(event) {
 }
 
 function removeBook(bookid) {
-  myLibrary.splice(bookid,1);
+  myLibrary.splice(bookid, 1);
+  showAllBooks();
+}
+
+function toggleReadBook(bookid) {
+  console.log(myLibrary[bookid].hasBeenRead);
+  myLibrary[bookid].hasBeenRead = !myLibrary[bookid].hasBeenRead;
+  console.log(myLibrary[bookid].hasBeenRead);
   showAllBooks();
 }
 
