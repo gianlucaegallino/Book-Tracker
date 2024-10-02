@@ -10,12 +10,14 @@ let myForm = document.querySelector(".myForm");
 
 const myLibrary = [];
 
-function Book(author, title, pageCount, hasBeenRead, genre) {
-  this.author = author;
-  this.title = title;
-  this.pageCount = pageCount;
-  this.hasBeenRead = hasBeenRead;
-  this.genre = genre;
+class Book{
+  constructor(author, title, pageCount, hasBeenRead, genre){
+    this.author = author;
+    this.title = title;
+    this.pageCount = pageCount;
+    this.hasBeenRead = hasBeenRead;
+    this.genre = genre;
+  }
 }
 
 function addBookToLibrary(author, title, pageCount, hasBeenRead, genre) {
@@ -29,7 +31,7 @@ function showAllBooks() {
   bookContainer.innerHTML="";
   let bookCount = 0;
   //Adds the books in the list
-  myLibrary.forEach((book) => {
+  myLibrary.forEach((Book) => {
     //Creates a book card
     const div = document.createElement("div");
     bookContainer.appendChild(div);
