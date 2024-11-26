@@ -96,6 +96,46 @@ function formSubmit(event) {
   //checks for empty fields
   if (author != "" && title != "" && pages != "" && genre != "") success = true;
 
+  authorInput.addEventListener("input", (event) => {
+    if (authorInput.validity.typeMismatch) {
+      authorInput.setCustomValidity("I am expecting an author");
+    } else {
+      authorInput.setCustomValidity("");
+    }
+  });
+
+  titleInput.addEventListener("input", (event) => {
+    if (titleInput.validity.typeMismatch) {
+      titleInput.setCustomValidity("I am expecting an author");
+    } else {
+      titleInput.setCustomValidity("");
+    }
+  });
+
+  pageInput.addEventListener("input", (event) => {
+    if (pageInput.validity.typeMismatch) {
+      pageInput.setCustomValidity("I am expecting a page count");
+    } else {
+      pageInput.setCustomValidity("");
+    }
+  });
+
+  readInput.addEventListener("input", (event) => {
+    if (readInput.validity.typeMismatch) {
+      readInput.setCustomValidity("I am expecting a read status");
+    } else {
+      readInput.setCustomValidity("");
+    }
+  });
+
+  genreInput.addEventListener("input", (event) => {
+    if (genreInput.validity.typeMismatch) {
+      genreInput.setCustomValidity("I am expecting a genre");
+    } else {
+      genreInput.setCustomValidity("");
+    }
+  });
+
   if (success) {
     addBookToLibrary(author, title, pages, read, genre);
     showAllBooks();
